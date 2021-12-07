@@ -1,3 +1,5 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -13,6 +15,10 @@ public class HttpSocketServer {
          while(true) {
              Socket clientSocket = serverSocket.accept();
              System.out.println("[ New client connected ]");
+
+             // closing the connection
+             System.err.println("[ -- Client disconnected -- ]");
+             clientSocket.close();
          }
     }
 }
