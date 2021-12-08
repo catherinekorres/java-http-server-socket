@@ -17,14 +17,10 @@ There are only 2 responses mapped:
 - Java SE Development Kit (available <a href="https://www.oracle.com/java/technologies/downloads/#java11" target="_blank">here</a>)
 
 ## 🛠️ How to run
-First, clone the repository 
-```
-git clone git@github.com:catherinekorres/java-http-server-socket.git
-```
 After cloning the repository, go to the directory `/src`, where the `.java` files
 are. Then, compile them:
 ```
-cd src && 
+cd java-http-server-socket/src && 
 javac HttpServerSocket.java HttpResponse.java
 ```
 
