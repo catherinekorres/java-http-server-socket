@@ -21,12 +21,12 @@ After cloning the repository, go to the directory `/src`, where the `.java` file
 are and then, compile them:
 ```
 cd src && 
-javac HttpSocketServer.java HttpResponse.java
+javac HttpServerSocket.java HttpResponse.java
 ```
 
 Once finished, run the project with the following command:
 ```
-java HttpSocketServer
+java HttpServerSocket
 ```
 That's it! ✨️ The server is up.
 

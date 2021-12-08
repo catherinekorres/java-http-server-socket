@@ -2,7 +2,7 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class HttpSocketServer {
+public class HttpServerSocket {
     public static void main(String args[] ) throws IOException {
         // create server socket
         int port = 8081;
