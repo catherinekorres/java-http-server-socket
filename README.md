@@ -21,16 +21,10 @@ After cloning the repository, go to the directory `/src`, where the `.java` file
 are and then, compile them:
 ```
 cd src &&
-javac -d ../out/production/http-socket-server HttpSocketServer.java HttpResponse.java
+javac -d HttpSocketServer.java HttpResponse.java
 ```
 
-In the command above, you set the path `/out/production/http-socket-server` where the `.class` files will be created after the compilation is over. 
-
-Once finished, go to the directory defined for the `.class` files:
-```
-cd ../out/production/http-socket-server
-```
-And run the project with the following command:
+Once finished, run the project with the following command:
 ```
 java HttpSocketServer
 ```
