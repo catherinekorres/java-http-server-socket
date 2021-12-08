@@ -19,7 +19,7 @@ There are only 2 responses mapped:
 ## 🛠️ How to run
 First, clone the repository 
 ```
-git clone https://github.com/catherinekorres/java-http-server-socket.git
+git clone git@github.com:catherinekorres/java-http-server-socket.git
 ```
 After cloning the repository, go to the directory `/src`, where the `.java` files
 are. Then, compile them:
