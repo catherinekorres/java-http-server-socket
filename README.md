@@ -20,8 +20,8 @@ There are only 2 responses mapped:
 After cloning the repository, go to the directory `/src`, where the `.java` files
 are and then, compile them:
 ```
-cd src &&
-javac -d HttpSocketServer.java HttpResponse.java
+cd src && 
+javac HttpSocketServer.java HttpResponse.java
 ```
 
 Once finished, run the project with the following command:
