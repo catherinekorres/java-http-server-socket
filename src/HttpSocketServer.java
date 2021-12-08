@@ -3,7 +3,6 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class HttpSocketServer {
-
     public static void main(String args[] ) throws IOException {
         // create server socket
         int port = 8081;
@@ -51,10 +50,12 @@ public class HttpSocketServer {
              // sets response according to path
              // any other URL other than root should return 404
              String httpResponse;
-             if (pathExists) {
-                 httpResponse = "HTTP/1.1 404 Not Found\r\n\r\n" + "404 Not Found";
+             if (!pathExists) {
+                 // 200 - OK
+                 httpResponse = HttpResponse.ok();
              } else {
-                 httpResponse = "HTTP/1.1 200 OK\r\n\r\n" + "Welcome";
+                 // 404 - NOT FOUND
+                 httpResponse = HttpResponse.notFound();
              }
 
              // writes response
