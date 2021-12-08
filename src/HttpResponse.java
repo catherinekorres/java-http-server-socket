@@ -3,7 +3,7 @@ public class HttpResponse {
             NOT_FOUND = "HTTP/1.1 404 Not Found\r\n\r\n";
 
     public static String ok() {
-        String content = "<h1>Bem-vindo ao meu server Java! :)</h1>";
+        String content = "<h1>Welcome to my Java server! :)</h1>\n";
         return OK + getHtmlBody(content);
     }
 
