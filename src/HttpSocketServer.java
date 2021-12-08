@@ -1,7 +1,6 @@
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.net.URI;
 
 public class HttpSocketServer {
 
@@ -23,17 +22,45 @@ public class HttpSocketServer {
              );
 
              String s;
+             String path = "";
+             boolean pathExists = false;
+
+             // reads input stream
              while ((s = in.readLine()) != null) {
                  System.out.println(s);
+
+                 // analyzing first line of input stream
+                 // example: GET /sample HTTP/1.1
+                 if (s.contains("GET")) {
+                     int indexOfFirstDash = s.indexOf("/") + 1;
+                     int indexOfLastSpace = s.lastIndexOf(" ");
+
+                     // gets the path value
+                     // in the example above, the value would be "sample"
+                     path = s.substring(indexOfFirstDash, indexOfLastSpace);
+                 }
+
                  if (s.isEmpty()) {
                      break;
                  }
              }
 
-             String httpResponse = "HTTP/1.1 200 OK\r\n\r\n" + "Welcome";
+             // checks if there is a path
+             pathExists = !path.equals("");
+
+             // sets response according to path
+             // any other URL other than root should return 404
+             String httpResponse;
+             if (pathExists) {
+                 httpResponse = "HTTP/1.1 404 Not Found\r\n\r\n" + "404 Not Found";
+             } else {
+                 httpResponse = "HTTP/1.1 200 OK\r\n\r\n" + "Welcome";
+             }
+
+             // writes response
              out.write(httpResponse);
 
-             // closing the connection
+             // closes the connection
              System.err.println("[ -- Client disconnected -- ]");
              out.close();
              in.close();
